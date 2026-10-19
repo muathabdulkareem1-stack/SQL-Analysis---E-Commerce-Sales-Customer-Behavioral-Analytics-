@@ -109,9 +109,13 @@ Combines a 3-table join, 2-stage CTE pipeline, window functions (ntile(5) spend 
 
 ### 6. Repository Structure & How to Run
 
+```text
+├── docs/
+│   └── sql_documentation.docx        # Full technical build log & implementation notes
 ├── sql/
-│   └── ecommerce_analytics_suite.sql # The master SQL script containing all stages
+│   └── ecommerce_analytics_suite.sql # Master SQL script with all stages
 └── README.md                         # Master GitHub case study
+```
 
 
 
