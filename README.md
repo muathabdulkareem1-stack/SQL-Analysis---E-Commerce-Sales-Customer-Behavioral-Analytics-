@@ -63,11 +63,13 @@ During staging ingestion via the SSMS Import Flat File Wizard, column configurat
 
 ### B. Defensive Referential Integrity Audit (0 Orphan Records)
 Before applying DDL constraints, defensive verification queries checked for unlinked records across child-parent relationships:
-<img width="728" height="393" alt="image" src="https://github.com/user-attachments/assets/08ee19c5-0037-4e0d-a001-29f4c376d7de" />
+<img width="448" height="393" alt="image" src="https://github.com/user-attachments/assets/f3f6d51b-89de-46f3-8197-58d9ea147562" />
+
 
 ### C. Constraint Enforcement (DDL)
 With referential integrity confirmed, foreign key constraints were bound to the database engine:
-<img width="975" height="167" alt="image" src="https://github.com/user-attachments/assets/2be19986-b3c5-4bf4-a50b-3c6b6c3246ed" />
+<img width="561" height="167" alt="image" src="https://github.com/user-attachments/assets/5c2b0c49-84bb-42f3-9e68-7fa3a03799e6" />
+
 
 ### 4. Progressive Analytical Query Suite
 ### Stage 1: Multi-Table Relational JOINs
@@ -75,21 +77,24 @@ Business Question Answered : "Does purchasing behavior differ by region? Which p
 
 Connects all 4 relational tables to analyze regional sales and net profit margins by category.
 
-<img width="975" height="514" alt="image" src="https://github.com/user-attachments/assets/68e02eca-158d-4258-b1c7-071be55f235f" />
+<img width="561" height="381" alt="image" src="https://github.com/user-attachments/assets/d4878bf9-3ced-495f-85c2-582af326758f" />
+
 
 ### Stage 2: Comparative Subqueries
 Business Question Answered: "Which individual customers spent more money in total than the average customer did?"
 
 Uses a nested scalar subquery in the HAVING clause to compute the true average lifetime spend per user account across the entire store before filtering individual customer totals.
 
-<img width="882" height="473" alt="image" src="https://github.com/user-attachments/assets/50b5398d-5b2c-4996-8474-cfc715288b71" />
+<img width="464" height="380" alt="image" src="https://github.com/user-attachments/assets/59d6501f-4e53-4aab-aa9c-f8972a7a654a" />
+
 
 ### Stage 3: Window Functions
 Business Questions Answered : "Which products generate the highest revenue within each category, and what are the top 3 best-selling products per category?"
 
 Uses dense_rank()  within a derived table to identify the top 3 products per category without collapsing product row grain.
 
-<img width="975" height="487" alt="image" src="https://github.com/user-attachments/assets/e01d1e2e-3253-49c9-ab24-4c840ead2097" />
+<img width="390" height="366" alt="image" src="https://github.com/user-attachments/assets/7fab31d7-9950-43f2-9268-891a2780c34a" />
+
 
 ### Stage 4: Multi-Stage CTEs
 Business Question Answered: "How does customer behavior change over time? (Repurchase Velocity — For repeat customers, how many days elapsed between their 1st order and their 2nd order?)"
